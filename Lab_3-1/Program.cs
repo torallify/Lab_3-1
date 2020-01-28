@@ -11,10 +11,11 @@ namespace Lab_3_1
             bool worked;
             string userChoice = null;
             string name, dish, title;
+            string learnMore;
             
 
             string[] studentNames = { "Laura", "Brea", "Lucero" };
-            string[] favoriteDish = { "Basil fried rice with no bell peppers. She likes it with extra egg and chicken with medium plus spice",
+            string[] favoriteDish = { "Basil fried rice with no bell peppers. \nShe likes it with extra egg and chicken with medium+ spice",
                                         "Egg Noodles with no meat and EXTRA HOT spice",
                                         "tacos de lengua with extra salsa" };
             string[] previousTitle = { "Application Analyst",
@@ -25,7 +26,8 @@ namespace Lab_3_1
 
             do
             {
-                Console.Write("\nWhich student would you like to know about? (Enter a number from 1-3): ");
+                
+                Console.Write($"\nWhich student would you like to know about? (Enter a number from 1-{studentNames.Length}): ");
 
                 string userInput = Console.ReadLine();
                 worked = int.TryParse(userInput, out studentInt);
@@ -37,10 +39,10 @@ namespace Lab_3_1
                     userInput = Console.ReadLine();
                     worked = int.TryParse(userInput, out studentInt);
                 }
-                if (studentInt > 3 || studentInt <=0)
+                if (studentInt > studentNames.Length || studentInt <=0)
                 {
-                    Console.WriteLine("\nThe number you entered is not in the range");
-                    Console.Write("Please enter a number between 1-3: ");
+                    Console.WriteLine($"\nThe number {studentInt} is not in the range");
+                    Console.Write($"\nPlease enter a number between 1-{studentNames.Length}: ");
                     userInput = Console.ReadLine();
                     worked = int.TryParse(userInput, out studentInt);
                 }
@@ -60,17 +62,31 @@ namespace Lab_3_1
                     userChoice = Console.ReadLine().ToLower();
                 }
 
+
                 if (userChoice == "favorite dish")
                 {
                     Console.WriteLine($"\n{name}'s {userChoice} is {dish}.");
+
+                    Console.Write($"\nWould you like to know {name}'s previous title? (Enter \"yes\" or \"no\"): ");
+                    learnMore = Console.ReadLine().ToLower();
+
+                    if (learnMore == "yes")
+                    {
+                        Console.Write($"\n{name}'s previous title was {title}.");
+                    }
                 }
                 else if (userChoice == "previous title")
                 {
                     Console.WriteLine($"\n{name}'s {userChoice} was {title}.");
+
+                    Console.Write($"\nWould you like to know {name}'s favorite dish? (Enter \"yes\" or \"no\"): ");
+                    learnMore = Console.ReadLine().ToLower();
+
+                    if (learnMore == "yes")
+                    {
+                        Console.WriteLine($"\n{name}'s favorite dish is {dish}.");
+                    }
                 }
-
-                //Console.WriteLine($"Would you like to know more about {name}");
-
 
                 Console.Write("\nWould you like to know about another student? (Enter \"yes\" or \"no\"): ");
                 userContinue = Console.ReadLine().ToLower();
