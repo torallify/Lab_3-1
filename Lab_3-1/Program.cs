@@ -14,13 +14,27 @@ namespace Lab_3_1
             string learnMore;
             
 
-            string[] studentNames = { "Laura", "Brea", "Lucero" };
+            string[] studentNames = { "Laura", "Brea", "Lucero","Mike","Olaposi","Lauren", "Russ","Socrates","Tom", "Jacob" };
             string[] favoriteDish = { "Basil fried rice with no bell peppers. \nShe likes it with extra egg and chicken with medium+ spice",
                                         "Egg Noodles with no meat and EXTRA HOT spice",
-                                        "tacos de lengua with extra salsa" };
+                                        "tacos de lengua with extra salsa",
+                                        "pad thai",
+                                         "pizza",
+                                         "chicken wings",
+                                         "Sushi",
+                                         "gyro",
+                                         "vindaloo",
+                                         "soup"};
             string[] previousTitle = { "Application Analyst",
                                         "Verification of Employment Specialist",
-                                        "Executive Client Communication" };
+                                        "Executive Client Communication",
+                                        "Data Analyst",
+                                        "Professional Leg Model",
+                                        "Princess",
+                                        "Professional Box Smasher",
+                                        "Philosopher",
+                                        "Wizard",
+                                        "Imports/Exports" };
 
             Console.Write("Welcome to our Dev.Build(3.0) Class.");
 
